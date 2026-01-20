@@ -8,7 +8,39 @@
 **Argus VC** is an agentic AI system designed to automate the initial due diligence process for Venture Capital firms. It employs a **Hub-and-Spoke** architecture where a central Router orchestrates specialized agents to analyze a startup's pitch deck from multiple angles, culminating in a rigorous validation loop ("The Critic") before generating a final Investment Memo.
 
 ## 🏗 Concept & Architecture
+Yes, absolutely. A visual flow is perfect for explaining the "Hub-and-Spoke" architecture.
 
+Here is the Mermaid code specifically designed for Argus VC. It accurately reflects the parallel processing of your agents (Sherlock, Researcher, CFO) and the critical validation step before the final output.
+
+Copy the code below and paste it into your README.md right after the "Concept & Architecture" section (or anywhere you prefer).
+
+Updated README Section with Diagram
+Markdown
+
+The system mimics a real investment committee.
+
+```mermaid
+graph TD
+    User([User Uploads PDF]) --> Ingest[Ingestion Engine<br>Gemini 3 Flash]
+    Ingest --> Router{Router Agent}
+    
+    subgraph "Parallel Investigation Swarm"
+        Router --> Sherlock[🕵️ Sherlock<br>Founder Background]
+        Router --> Researcher[🔬 Researcher<br>Market Analysis]
+        Router --> CFO[🧮 CFO<br>Financial Logic]
+    end
+
+    Sherlock --> Critic{⚖️ The Critic<br>Validation Gate}
+    Researcher --> Critic
+    CFO --> Critic
+
+    Critic -->|Validated| Writer[✍️ Writer Agent<br>Investment Memo]
+    Writer --> Output([Final Report])
+
+    style Router fill:#f9f,stroke:#333,stroke-width:2px
+    style Critic fill:#ff9999,stroke:#333,stroke-width:2px
+    style Writer fill:#99ff99,stroke:#333,stroke-width:2px
+```
 The system mimics a real investment committee:
 
 1.  **Ingestion (Multimodal)**: Uses **Gemini 3 Flash** to natively "see" and understand charts, graphs, and financial tables in the uploaded PDF pitch deck.
