@@ -8,16 +8,6 @@
 **Argus VC** is an agentic AI system designed to automate the initial due diligence process for Venture Capital firms. It employs a **Hub-and-Spoke** architecture where a central Router orchestrates specialized agents to analyze a startup's pitch deck from multiple angles, culminating in a rigorous validation loop ("The Critic") before generating a final Investment Memo.
 
 ## 🏗 Concept & Architecture
-Yes, absolutely. A visual flow is perfect for explaining the "Hub-and-Spoke" architecture.
-
-Here is the Mermaid code specifically designed for Argus VC. It accurately reflects the parallel processing of your agents (Sherlock, Researcher, CFO) and the critical validation step before the final output.
-
-Copy the code below and paste it into your README.md right after the "Concept & Architecture" section (or anywhere you prefer).
-
-Updated README Section with Diagram
-Markdown
-
-The system mimics a real investment committee.
 
 ```mermaid
 graph TD
